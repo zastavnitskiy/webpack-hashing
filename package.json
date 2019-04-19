@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "prettier": "^1.17.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  },
+  "scripts": {
+    "reproduce": "for i in 1 2; do yarn webpack --entry ./source$i/index.js --output ./source$i/build.js; yarn prettier --write ./source$i/build.js; done;",
+    "proposed": "for i in 1 2; do yarn webpack --entry ./source$i/index.js --config ./custom-webpack-config.js --output ./source$i/build-custom.js; yarn prettier --write ./source$i/build-custom.js; done;"
+  }
+}
